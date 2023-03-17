@@ -8,12 +8,15 @@
  */
 int main(void)
 {
-	int lower = 'a';
+	char lower = 'a';
 
 	while (lower <= 'z')
 	{
 		if (lower == 'q' || lower == 'e')
+		{
+			lower++;
 			continue;
+		}
 
 		putchar(lower);
 		lower++;
