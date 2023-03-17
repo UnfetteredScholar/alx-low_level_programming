@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-/* Prints text using puts() */
+/**
+ * main - Prints text using puts()
+ *
+ * Return: 0 always
+ */
 
 int main(void)
 {
