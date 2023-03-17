@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/***
+/**
  * main - prints the sizes of various datatypes
  *
  * Return: 0 always
