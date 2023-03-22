@@ -18,14 +18,17 @@ void times_table(void)
 				_putchar('0' + ((nums[i] / 10) % 10));
 			_putchar('0' + (nums[i] % 10));
 
-			if(nums[i] == 81)
+			if (nums[i] == 81)
 				return;
 
+			nums[i] += i;
+
+			if (i == 9)
+				break;
 			_putchar(',');
 			if ( i < 9 && nums[i + 1] < 10)
 				_putchar(' ');
 			_putchar(' ');
-			nums[i] += i;
 		}
 		_putchar('\n');
 	}
