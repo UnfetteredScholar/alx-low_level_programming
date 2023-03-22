@@ -8,7 +8,7 @@
 void times_table(void)
 {
 	int nums[]= {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	int r;
+	int i;
 
 	while (1)
 	{
