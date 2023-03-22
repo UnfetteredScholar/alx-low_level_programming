@@ -19,7 +19,7 @@ void times_table(void)
 			_putchar('0' + (nums[i] % 10));
 
 			if(nums[i] == 81)
-				return
+				return;
 			_putchar(',');
 			_putchar(' ');
 			nums[i] += i;
