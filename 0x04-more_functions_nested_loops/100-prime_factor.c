@@ -3,26 +3,6 @@
 #include <math.h>
 
 /**
- * is_prime - checks if an integer is prime
- * @n: the integer
- *
- * Return: 1 if prime 0 otherwise
- */
-int is_prime(long int n)
-{
-	long int factor = sqrt(n);
-
-	while (factor > 1)
-	{
-		if (n % factor == 0)
-			return (0);
-		factor--;
-	}
-
-	return (1);
-}
-
-/**
  * main - finds the largest prime factor of 612852475143
  *
  * Return: 0 always
@@ -30,16 +10,25 @@ int is_prime(long int n)
 int main(void)
 {
 	long int n = 612852475143;
-	long int factor = sqrt(n);
+	long int factor = 2;
+	long int max;
 
-	while (factor > 1)
+	while (n != 0)
 	{
-		if (n % factor == 0 && is_prime(factor))
+		if (n % factor != 0)
 		{
-			printf("%ld\n", factor);
-			break;
+			factor++;
 		}
-		factor--;
+		else
+		{
+			max = n;
+			n /= factor;
+			if (n == 1)
+			{
+				printf("%ld\n", max);
+				break;
+			}
+		}
 	}
 
 	return (0);
