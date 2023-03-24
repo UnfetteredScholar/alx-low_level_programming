@@ -8,24 +8,24 @@
  */
 void print_number(int n)
 {
-	int rem;
-	int div = 1;
+	int div = 10;
+	int mul = 1;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n *= -1;
-	}
-	rem = n;
-	while (rem > 9)
-	{
-		rem /= 10;
-		div *= 10;
+		mul = -1;
 	}
 
+	while ((n / div) * mul > 9)
+	{
+		div *= 10;
+	}
+	if ((n <= 9 && n >= 0) || (n < 0 && n >= -9))
+		div /= 10;
 	while (div > 0)
 	{
-		_putchar('0' + (n / div) % 10);
+		_putchar('0' + mul * ((n / div) % 10));
 		div /= 10;
 	}
 }
