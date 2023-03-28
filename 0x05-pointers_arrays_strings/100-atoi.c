@@ -11,6 +11,7 @@ int _atoi(char *s)
 	int res = 0;
 	int minus = 0;
 	int i = 0;
+	int factor = 1;
 
 	/* move to the first int while counting -  */
 	while (s[i] != '\0' && !(s[i] >= '0' && s[i] <= '9'))
@@ -19,14 +20,14 @@ int _atoi(char *s)
 			minus++;
 		i++;
 	}
+	if (minus % 2 != 0)
+		factoe = -1;
 
 	while (s[i] != '\0' && (s[i] >= '0' && s[i] <= '9'))
 	{
-		res = (res * 10) + (s[i] - '0');
+		res = (res * 10) + factor * (s[i] - '0');
 		i++;
 	}
-	if (minus % 2 != 0)
-		res *= -1;
 
 	return (res);
 }
