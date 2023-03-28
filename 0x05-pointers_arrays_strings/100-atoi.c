@@ -21,7 +21,7 @@ int _atoi(char *s)
 		i++;
 	}
 	if (minus % 2 != 0)
-		factoe = -1;
+		factor = -1;
 
 	while (s[i] != '\0' && (s[i] >= '0' && s[i] <= '9'))
 	{
