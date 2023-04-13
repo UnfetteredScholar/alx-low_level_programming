@@ -11,8 +11,11 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *res = NULL;
+	unsigned long prod = size * nmemb;
 
 	if (nmemb == 0 || size == 0)
+		return (NULL);
+	if (prod / size != nmemb)
 		return (NULL);
 
 	res =  malloc(nmemb * size);
