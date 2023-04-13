@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -16,7 +17,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	if (prod / size != nmemb)
-		return (NULL);
+		exit(EXIT_FAILURE);
 
 	res =  malloc(nmemb * size);
 	return (res);
