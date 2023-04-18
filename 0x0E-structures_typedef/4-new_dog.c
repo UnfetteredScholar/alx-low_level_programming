@@ -24,23 +24,19 @@ int _str_len(char *s)
  * @s1: the source
  * @s2: the destination
  *
- * Retutn: pointer to new string
+ * Return: pointer to new string
  */
 char *_str_cpy(char *s1, char *s2)
 {
-	int len = _str_len(s1);
 	int i;
 
-	if (len == 0)
-		return (NULL);
-	s2 = malloc(sizeof(char) * (len + 1));
 	i = 0;
 	while (s1[i] != '\0')
 	{
 		s2[i] = s1[i];
 		i++;
 	}
-	s2[i] = s1[i];
+	s2[i] = '\0';
 	return (s2);
 }
 
@@ -55,11 +51,30 @@ char *_str_cpy(char *s1, char *s2)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d = malloc(sizeof(dog_t));
+	int len;
 
 	if (d == NULL)
 		return (NULL);
+
+	len = _str_len(name);
+	d->name = malloc(sizeof(char) * (len + 1));
+	if (d->name == NULL)
+	{
+		free(d);
+		return (NULL);
+	}
 	d->name = _str_cpy(name, d->name);
+
 	d->age = age;
+
+	len = _str_len(owner);
+	d->owner = malloc(sizeof(char) * (len + 1));
+	if (d->owner == NULL)
+	{
+		free(d->name);
+		free(d);
+		return (NULL);
+	}
 	d->owner = _str_cpy(owner, d->owner);
 	return (d);
 }
