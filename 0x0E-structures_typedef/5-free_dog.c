@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include "dog.h"
 
-/** 
- * free_dog - deletes a dog object\
+/**
+ * free_dog - deletes a dog object
  * @d: the dog
  *
  * Return: void
