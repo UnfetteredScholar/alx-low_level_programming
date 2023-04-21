@@ -12,17 +12,15 @@ void print_all(const char * const format, ...)
 {
 	int i = 0, valid = 0;
 	char *s = NULL;
-	char f;
 	va_list args;
 
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		f = format[i];
 		if (valid)
 			printf(", ");
 		valid = 1;
-		switch (f)
+		switch (format[i])
 		{
 			case 'c':
 				printf("%c", va_arg(args, int));
