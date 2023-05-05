@@ -11,8 +11,11 @@ unsigned int _strlen(const char *s)
 {
 	unsigned int len = 0;
 
-	while (s[len] != '\0')
-		len++;
+	if (s != NULL)
+	{
+		while (s[len] != '\0')
+			len++;
+	}
 	return (len);
 }
 
@@ -28,6 +31,9 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int len = _strlen(b);
 	unsigned int i;
 	unsigned int j = 0;
+
+	if (len == 0)
+		return (0);
 
 	for (j = 0, i = len - 1; j < len; j++, i--)
 	{
