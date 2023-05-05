@@ -10,9 +10,9 @@ int main(void)
 {
     unsigned int n;
 
-    n = flip_bits(1024, 1);
+    n = flip_bits(1024, 0);
     printf("%u\n", n);
-    n = flip_bits(402, 98);
+    n = flip_bits(402, 402);
     printf("%u\n", n);
     n = flip_bits(1024, 3);
     printf("%u\n", n);
