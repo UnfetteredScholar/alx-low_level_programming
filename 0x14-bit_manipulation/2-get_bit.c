@@ -16,8 +16,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	else
 	{
 		n = n >> index;
-		if (n == 0)
-			return (-1);
+		/*
+		 * if (n == 0)
+		 * return (-1);
+		*/
 		return (n & 0x1);
 	}
 }
