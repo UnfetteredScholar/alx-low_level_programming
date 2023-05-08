@@ -32,12 +32,12 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	fp = open(filename, O_CREAT | O_TRUNC, 0600);
+	fp = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (fp < 0)
 		return (-1);
 	if (len > 0)
 		count = write(fp, text_content, len);
-	if (count < 0)
+	if (count < 0 || count != len)
 	{
 		close(fp);
 		return (-1);
