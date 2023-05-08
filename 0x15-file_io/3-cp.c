@@ -55,7 +55,7 @@ void _frw_error(char *f, int code)
 	if (code == 98)
 		dprintf(2, "Error: Can't read from file %s\n", f);
 	else if (code == 99)
-		dprintf(2, "Error: Can't write tp %s\n", f);
+		dprintf(2, "Error: Can't write fp %s\n", f);
 	exit(code);
 }
 
