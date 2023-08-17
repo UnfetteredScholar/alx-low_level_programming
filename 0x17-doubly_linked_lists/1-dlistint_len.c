@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <lists.h>
+#include "lists.h"
 
 /**
  * dlistint_len - finds the length of a dlist
