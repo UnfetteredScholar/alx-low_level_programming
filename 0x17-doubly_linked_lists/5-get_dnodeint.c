@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * get_dlistint_t - returns the nth node of a dlist
+ * get_dnodeint_at_index - returns the nth node of a dlist
  * @head: the head of the list
  * @index: the index of the node
  *
