@@ -9,22 +9,21 @@
  *
  * Return: pointer to the node else NULL
  */
-hash_node_t *create_hash_node(const char *key,const char *value)
+hash_node_t *create_hash_node(const char *key, const char *value)
 {
 	hash_node_t *new  = NULL;
 
 	if (!key || !value || key[0] == '\0')
-                return (NULL);
+		return (NULL);
 
-        new = malloc(sizeof(hash_node_t));
-        if (!new)
-        {
-                return (NULL);
-        }
-        new->key = strdup(key);
-        new->value = strdup(value);
+	new = malloc(sizeof(hash_node_t));
+	if (!new)
+	{
+		return (NULL);
+	}
+	new->key = strdup(key);
+	new->value = strdup(value);
 	new->next = NULL;
-
 	return (new);
 }
 
