@@ -6,7 +6,6 @@
 /**
  * shash_table_create - creates a sorted hash table
  * @size: size of the hash table
- 
  * Return: pointer to the new table, or NULL on failure
  */
 shash_table_t *shash_table_create(unsigned long int size)
