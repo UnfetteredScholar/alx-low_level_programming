@@ -38,6 +38,7 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new = NULL;
+	hash_node_t *head = NULL;
 	unsigned long int index = 0;
 
 	if (!ht || !key || key[0] == '\0')
@@ -47,9 +48,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new = create_hash_node(key, value);
 	if (new == NULL)
 		return (0);
-	if (ht->array[index] != NULL)
+	head = ht->array[index];
+
+	/* check for duplicate and replace it */
+	while (head)
+	{
+		if (!strcmp(head->key, key))
+		{
+			free(head->value);
+			head->value = strdup(value);
+			free(new->value);
+			free(new->key);
+			free(new);
+			new = NULL;
+			break;
+		}
+		head = head->next;
+	}
+	/* if new is not NULL no dupe found */
+	if (new != NULL)
+	{
 		new->next = ht->array[index];
-	ht->array[index] = new;
+		ht->array[index] = new;
+	}
 
 	return (1);
 }
