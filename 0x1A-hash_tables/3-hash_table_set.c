@@ -13,7 +13,7 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 {
 	hash_node_t *new  = NULL;
 
-	if (!key || !value || key[0] == '\0')
+	if (!key || key[0] == '\0')
 		return (NULL);
 
 	new = malloc(sizeof(hash_node_t));
@@ -40,19 +40,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new = NULL;
 	unsigned long int index = 0;
 
-	if (!ht || !key || !value || key[0] == '\0')
+	if (!ht || !key || key[0] == '\0')
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
 	new = create_hash_node(key, value);
-	if (!new)
-	{
+	if (new == NULL)
 		return (0);
-	}
 	if (ht->array[index] != NULL)
 		new->next = ht->array[index];
 	ht->array[index] = new;
 
-	return (0);
+	return (1);
 }
 
