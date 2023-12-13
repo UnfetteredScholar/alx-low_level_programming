@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "search_algos.h"
 
 /**
  * print_sub_array - prints a sub array
